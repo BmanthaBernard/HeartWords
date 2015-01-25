@@ -22,14 +22,12 @@
   <script src="script.js"></script>
 	
   </head>
-  <body ng-app="ngSwipeLeftExample" >
-    <h1>Heart Words</h1>
-	<div ng-show="!showActions" ng-swipe-left="showActions = true">
-  Some list content, like an email in the inbox
-</div>
-<div ng-show="showActions" ng-swipe-right="showActions = false">
-  <button ng-click="reply()">Reply</button>
-  <button ng-click="delete()">Delete</button>
+  <body ng-app="wordcatApp">
+<div ng-controller="WordListCtrl">
+     <h1>Heart Words</h1>
+
+    <input ng-model="word" /><input ng-model="index"/>
+    <div ng-swipe-left="Next();" ng-swipe-right="Previous">Swipe left or Right</div>
 </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
