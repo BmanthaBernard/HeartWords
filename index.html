@@ -8,6 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,14 +25,22 @@
   </head>
   <body ng-app="wordcatApp">
 <div ng-controller="WordListCtrl">
-     <h1>Heart Words</h1>
-
+ <div ng-swipe-left="Next();">
+	<span class='bigWord'>{{word}}</span>
+	</div>
     <input ng-model="word" /><input ng-model="index"/>
-    <div ng-swipe-left="Next();" ng-swipe-right="Previous">Swipe left or Right</div>
+
+	
+	<nav>
+  <ul class="pager">
+    <li class="previous"><a href="#" ng-click="Previous()"><span aria-hidden="true">&larr;</span> Previous</a></li>
+    <li class="next"><a href="#" ng-click="Next()">Next <span aria-hidden="true">&rarr;</span></a></li>
+  </ul>
+</nav>
 </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>

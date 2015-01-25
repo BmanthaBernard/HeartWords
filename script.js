@@ -9,10 +9,14 @@ wordcatApp.controller('WordListCtrl', function ($scope) {
   $scope.index = 0;
   $scope.word = $scope.words[$scope.index].name;
   $scope.Next = function(){
-	  if (index < ($scope.words.length -1)) index++;
+	  console.log('next fired');
+	  if ($scope.index < ($scope.words.length -1)) $scope.index++;
+	    $scope.word = $scope.words[$scope.index].name;
   }
   $scope.Previous = function(){
-	  if (index>0) index--;
+	  console.log('previous fired');
+	  if ($scope.index>0) $scope.index--;
+	    $scope.word = $scope.words[$scope.index].name;
   }
 });
 console.log('script ran');
