@@ -12,7 +12,9 @@ wordcatApp.controller('WordListCtrl', function ($scope) {
     var list10 = ['also', 'him', 'yellow', 'white', 'every', 'black', 'has', 'from', 'them', 'if'];
     $scope.list = 'list1';
     $scope.index = 0;
+
     $scope.words = list1;
+	$scope.listlength = $scope.words.length
     $scope.word = $scope.words[$scope.index];
 
     $scope.LoadData = function () {
