@@ -16,6 +16,7 @@ wordcatApp.controller('WordListCtrl', function ($scope) {
     $scope.word = $scope.words[$scope.index];
 
     $scope.LoadData = function () {
+		$scope.index = 0;  //reset index on list change
         switch ($scope.list) {
             case 'list1':
                 $scope.words = list1;
