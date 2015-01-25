@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>Mrs Bogus Heart Words Flashcards</title>
 
     <!-- Bootstrap -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,22 +24,30 @@
 	
   </head>
   <body ng-app="wordcatApp">
-<div class='row'>
-    <div class='col-12'>
-        <div ng-controller="WordListCtrl" class='center-block'>	
-            <span ng-swipe-left='Next()' ng-swipe-right='Previous()' class='bigWord'>{{word}}</span>
-            <br> <span>{{index}}</span>
+  <div class='container' ng-controller="WordListCtrl">
+    <div class='row'>
+        <div class='col-lg-1 col-centered'>
+            <div> <span ng-swipe-left='Next()' ng-swipe-right='Previous()' class='bigWord'>{{word}}</span>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-lg-1'>
             <nav>
                 <ul class="pager">
                     <li class="previous"><a href="#" ng-click="Previous()"><span aria-hidden="true">&larr;</span> Previous</a>
+
                     </li>
                     <li class="next"><a href="#" ng-click="Next()">Next <span aria-hidden="true">&rarr;</span></a>
+
                     </li>
                 </ul>
             </nav>
         </div>
     </div>
 </div>
+  
+  
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
