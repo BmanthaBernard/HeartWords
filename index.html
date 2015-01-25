@@ -24,21 +24,22 @@
 	
   </head>
   <body ng-app="wordcatApp">
-<div ng-controller="WordListCtrl">
- <div ng-swipe-left="Next();">
-	<span class='bigWord'>{{word}}</span>
-	</div>
-    <input ng-model="word" /><input ng-model="index"/>
-
-	
-	<nav>
-  <ul class="pager">
-    <li class="previous"><a href="#" ng-click="Previous()"><span aria-hidden="true">&larr;</span> Previous</a></li>
-    <li class="next"><a href="#" ng-click="Next()">Next <span aria-hidden="true">&rarr;</span></a></li>
-  </ul>
-</nav>
+<div class='row'>
+    <div class='col-12'>
+        <div ng-controller="WordListCtrl" class='center-block'>	
+            <span ng-swipe-left='Next()' ng-swipe-right='Previous()' class='bigWord'>{{word}}</span>
+            <br> <span>{{index}}</span>
+            <nav>
+                <ul class="pager">
+                    <li class="previous"><a href="#" ng-click="Previous()"><span aria-hidden="true">&larr;</span> Previous</a>
+                    </li>
+                    <li class="next"><a href="#" ng-click="Next()">Next <span aria-hidden="true">&rarr;</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 </div>
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

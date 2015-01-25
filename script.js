@@ -1,5 +1,5 @@
 
-var wordcatApp = angular.module('wordcatApp', []);
+var wordcatApp = angular.module('wordcatApp', ['ngTouch']);
 wordcatApp.controller('WordListCtrl', function ($scope) {
   $scope.words = [
     {'name': 'with','list':'1'},
