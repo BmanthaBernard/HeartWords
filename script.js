@@ -10,6 +10,7 @@ wordcatApp.controller('WordListCtrl', function ($scope) {
     var list8 = ['new', 'came', 'where', 'make', 'soon', 'well', 'brown', 'four', 'help', 'big'];
     var list9 = ['down', 'funny', 'three', 'blue', 'away', 'who', 'our', 'two', 'under', 'red'];
     var list10 = ['also', 'him', 'yellow', 'white', 'every', 'black', 'has', 'from', 'them', 'if'];
+    var list11 = ['the','of','and','to','in','is','you','that','it','he','for','was','on','are','as','with','his','they','at','be','this','from','I','have','or','by','one','had','not'];
     $scope.list = 'list1';
     $scope.index = 0;
 
@@ -50,7 +51,11 @@ wordcatApp.controller('WordListCtrl', function ($scope) {
             case 'list10':
                 $scope.words = list10;
                 break;
+            case 'list11':
+                $scope.words = list11;
+                break;
         }
+        $scope.listlength = $scope.words.length
         $scope.word = $scope.words[$scope.index];
     };
 
