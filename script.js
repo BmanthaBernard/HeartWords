@@ -1,3 +1,23 @@
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+
 var wordcatApp = angular.module('wordcatApp', ['ngTouch']);
 wordcatApp.controller('WordListCtrl', function($scope) {
     var list1 = ['the', 'no', 'in', 'is', 'I', 'it', 'go', 'me', 'and', 'a'];
@@ -25,7 +45,7 @@ wordcatApp.controller('WordListCtrl', function($scope) {
         $scope.index = 0; //reset index on list change
         switch ($scope.list) {
             case 'list1':
-                $scope.words = list1;
+                $scope.words = shuffle(list1);
                 break;
             case 'list2':
                 $scope.words = list2;
@@ -55,16 +75,16 @@ wordcatApp.controller('WordListCtrl', function($scope) {
                 $scope.words = list10;
                 break;
             case 'list11':
-                $scope.words = list11;
+                $scope.words = shuffle(list11);
                 break;
             case 'list12':
-                $scope.words = list12;
+                $scope.words = shuffle(list12);
                 break;
             case 'list13':
-                $scope.words = list13;
+                $scope.words = shuffle(list13);
                 break;
             case 'list14':
-                $scope.words = list14;
+                $scope.words = shuffle(list14);
                 break;
         }
         $scope.listlength = $scope.words.length
