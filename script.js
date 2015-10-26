@@ -1,5 +1,5 @@
 var wordcatApp = angular.module('wordcatApp', ['ngTouch']);
-wordcatApp.controller('WordListCtrl', function ($scope) {
+wordcatApp.controller('WordListCtrl', function($scope) {
     var list1 = ['the', 'no', 'in', 'is', 'I', 'it', 'go', 'me', 'and', 'a'];
     var list2 = ['at', 'to', 'he', 'run', 'my', 'yes', 'like', 'will', 'see', 'am'];
     var list3 = ['on', 'not', 'jump', 'we', 'can', 'you', 'into', 'she', 'ran', 'for'];
@@ -10,16 +10,19 @@ wordcatApp.controller('WordListCtrl', function ($scope) {
     var list8 = ['new', 'came', 'where', 'make', 'soon', 'well', 'brown', 'four', 'help', 'big'];
     var list9 = ['down', 'funny', 'three', 'blue', 'away', 'who', 'our', 'two', 'under', 'red'];
     var list10 = ['also', 'him', 'yellow', 'white', 'every', 'black', 'has', 'from', 'them', 'if'];
-    var list11 = ['the','of','and','to','in','is','you','that','it','he','for','was','on','are','as','with','his','they','at','be','this','from','I','have','or','by','one','had','not'];
+    var list11 = ['the', 'of', 'and', 'to', 'in', 'is', 'you', 'that', 'it', 'he', 'for', 'was', 'on', 'are', 'as', 'with', 'his', 'they', 'at', 'be', 'this', 'from', 'I', 'have', 'or', 'by', 'one', 'had', 'not'];
+    var list12 = ['and', 'me', 'go', 'in', 'it', 'not', 'run', 'will', 'you', 'can', 'a', 'I', 'is', 'not', 'my', 'the', 'yes'];
+    var list13 = ['to', 'said', 'for', 'his', 'they', 'of', 'come', 'be', 'one', 'dog', 'he', 'she', 'that', 'but', 'out', 'one', 'all', 'with', 'her', 'was'];
+    var list14 = ['what', 'him', 'up', 'look', 'day', 'have', 'mother', 'then', 'when', 'do', 'we', 'so', 'are', 'little', 'at', 'your', 'like', 'get', 'thing', 'too'];
     $scope.list = 'list1';
     $scope.index = 0;
 
     $scope.words = list1;
-	$scope.listlength = $scope.words.length
+    $scope.listlength = $scope.words.length
     $scope.word = $scope.words[$scope.index];
 
-    $scope.LoadData = function () {
-		$scope.index = 0;  //reset index on list change
+    $scope.LoadData = function() {
+        $scope.index = 0; //reset index on list change
         switch ($scope.list) {
             case 'list1':
                 $scope.words = list1;
@@ -54,21 +57,30 @@ wordcatApp.controller('WordListCtrl', function ($scope) {
             case 'list11':
                 $scope.words = list11;
                 break;
+            case 'list12':
+                $scope.words = list12;
+                break;
+            case 'list13':
+                $scope.words = list13;
+                break;
+            case 'list14':
+                $scope.words = list14;
+                break;
         }
         $scope.listlength = $scope.words.length
         $scope.word = $scope.words[$scope.index];
     };
 
 
-    $scope.Next = function () {
+    $scope.Next = function() {
         if ($scope.index < ($scope.words.length - 1)) $scope.index++;
         $scope.word = $scope.words[$scope.index];
     };
-    $scope.Previous = function () {
+    $scope.Previous = function() {
         if ($scope.index > 0) $scope.index--;
         $scope.word = $scope.words[$scope.index];
     };
-    $scope.listChange = function () {
+    $scope.listChange = function() {
         $scope.LoadData();
     };
 });
